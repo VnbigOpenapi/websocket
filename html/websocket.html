@@ -7,7 +7,7 @@
 <body>
  Welcome<br/><input id="text" type="text"/>
 <!--
-输入事件格式为[{'event':'addChannel','channel':'vnbig_btc_etc_depth'}]
+输入事件格式为{"op": "command", "args": ["topic:VNBIG_X_Y", "topic:VNBIG_X_Y"]}
 -->
     <button onclick="send()">发送消息</button>
     <div id="message"></div>
@@ -16,7 +16,7 @@
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-         websocket = new WebSocket("ws://ws.vnbig.com/ws");
+         websocket = new WebSocket("wss://ws.vnbig.com");
     }
     else {
         alert('当前浏览器 Not support websocket')
